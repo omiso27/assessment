@@ -17,16 +17,36 @@ assessmentButton.onclick = () => { //ボタンが押されたら関数を実行�
   }
 
   resultDivided.innerText = '';
-  //診断結果を作成して
-  const header = document.createElement('h3'); //HTML内部に<h3></h3>タグを作成
-  header.innerText = '診断結果'; //<h3>診断結果</h3>
-  resultDivided.appendChild(header); //result-areaに子要素として追加。
-  //<div id="result-area"><h3>診断結果</h3></div>
 
-  const paragraph = document.createElement('p'); //<p></p>
-  const result = assessment(userName); //診断結果を用意しておく
-  paragraph.innerHTML = result; //<p>ーさんのいいところは〜ーです</p>
-  resultDivided.appendChild(paragraph); //result-areaに子要素として追加。
+  const headerDivided = document.createElement('div');
+  headerDivided.setAttribute('class', 'card-header');
+  headerDivided.innerText = '診断結果';
+
+  const bodyDivided = document.createElement('div');
+  bodyDivided.setAttribute('class', 'card-body');
+
+  const paragraph = document.createElement('p');
+  paragraph.setAttribute('class', 'card-text');
+  const result = assessment(userName);
+  paragraph.innerText = result;
+  bodyDivided.appendChild(paragraph);
+
+  resultDivided.setAttribute('class', 'card');
+  resultDivided.setAttribute('style', 'max-width: 700px');
+
+  resultDivided.appendChild(headerDivided);
+  resultDivided.appendChild(bodyDivided);
+
+  // //診断結果を作成して
+  // const header = document.createElement('h3'); //HTML内部に<h3></h3>タグを作成
+  // header.innerText = '診断結果'; //<h3>診断結果</h3>
+  // resultDivided.appendChild(header); //result-areaに子要素として追加。
+  // //<div id="result-area"><h3>診断結果</h3></div>
+
+  // const paragraph = document.createElement('p'); //<p></p>
+  // const result = assessment(userName); //診断結果を用意しておく
+  // paragraph.innerHTML = result; //<p>ーさんのいいところは〜ーです</p>
+  // resultDivided.appendChild(paragraph); //result-areaに子要素として追加。
 
   //tweetボタンを作成する
   tweetDivided.innerText = '';
