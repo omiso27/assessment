@@ -9,7 +9,6 @@ assessmentButton.onclick = () => { //ボタンが押されたら関数を実行�
   if (userName.length === 0) { //名前の入力がないときは処理をしません！
     return;
   }
-
   userNameInput.onkeydown = event => {
     if (event.key === 'Enter') {
       assessmentButton.onclick();
@@ -17,7 +16,6 @@ assessmentButton.onclick = () => { //ボタンが押されたら関数を実行�
   }
 
   resultDivided.innerText = '';
-
   const headerDivided = document.createElement('div');
   headerDivided.setAttribute('class', 'card-header');
   headerDivided.innerText = '診断結果';
@@ -65,12 +63,7 @@ assessmentButton.onclick = () => { //ボタンが押されたら関数を実行�
   const script = document.createElement('script');
   script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
   tweetDivided.appendChild(script);
-
-
 }
-
-
-
 
 const answers = [
   '{userName}のいいところは声です。{userName}の特徴的な声は皆を惹きつけ、心に残ります。',
